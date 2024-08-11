@@ -12648,5 +12648,6 @@ task.spawn(function()
 	Credits:Destroy()
 	IntroBackground:Destroy()
 	minimizeHolder()
+	notify("说明", "汉化者:execute500")
 	if IsOnMobile then notify("不稳定的设备", "在移动设备上,Infinite Yield可能存在问题或功能无法正常运行") end
 end)
