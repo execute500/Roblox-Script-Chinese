@@ -1203,7 +1203,7 @@ Delete_4.Position = UDim2.new(0, 200, 0, 0)
 Delete_4.Size = UDim2.new(0, 40, 0, 20)
 Delete_4.Font = Enum.Font.SourceSans
 Delete_4.TextSize = 14
-Delete_4.Text = "Delete"
+Delete_4.Text = "删除"
 Delete_4.TextColor3 = Color3.new(0, 0, 0)
 Delete_4.ZIndex = 10
 table.insert(shade3,Delete_4)
@@ -12648,5 +12648,5 @@ task.spawn(function()
 	Credits:Destroy()
 	IntroBackground:Destroy()
 	minimizeHolder()
-	if IsOnMobile then notify("Unstable Device", "On mobile, Infinite Yield may have issues or features that are not functioning correctly.") end
+	if IsOnMobile then notify("不稳定的设备", "在移动设备上,Infinite Yield可能存在问题或功能无法正常运行") end
 end)
