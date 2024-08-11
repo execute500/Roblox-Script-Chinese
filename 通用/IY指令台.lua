@@ -451,7 +451,7 @@ On.Text = ""
 On.TextColor3 = Color3.new(0, 0, 0)
 On.ZIndex = 10
 
-Positions = makeSettingsButton("编辑/转到记录点","rbxassetid://5147488592")
+Positions = makeSettingsButton("编辑/传送传送点","rbxassetid://5147488592")
 Positions.Position = UDim2.new(0, 5, 0, 145)
 Positions.Size = UDim2.new(1, -10, 0, 25)
 Positions.Name = "Waypoints"
@@ -721,7 +721,7 @@ Delete_2.Position = UDim2.new(0, 200, 0, 0)
 Delete_2.Size = UDim2.new(0, 40, 0, 20)
 Delete_2.Font = Enum.Font.SourceSans
 Delete_2.TextSize = 14
-Delete_2.Text = "Delete"
+Delete_2.Text = "删除"
 Delete_2.TextColor3 = Color3.new(0, 0, 0)
 Delete_2.ZIndex = 10
 table.insert(shade3,Delete_2)
@@ -1043,7 +1043,7 @@ Part.Position = UDim2.new(0, 5, 0, 150)
 Part.Size = UDim2.new(0, 40, 0, 20)
 Part.Font = Enum.Font.SourceSans
 Part.TextSize = 14
-Part.Text = "Part"
+Part.Text = "部件"
 Part.TextColor3 = Color3.new(1, 1, 1)
 Part.ZIndex = 10
 table.insert(shade2,Part)
@@ -1112,7 +1112,7 @@ TP.Position = UDim2.new(0, 155, 0, 0)
 TP.Size = UDim2.new(0, 40, 0, 20)
 TP.Font = Enum.Font.SourceSans
 TP.TextSize = 14
-TP.Text = "Goto"
+TP.Text = "传送"
 TP.TextColor3 = Color3.new(0, 0, 0)
 TP.ZIndex = 10
 table.insert(shade3,TP)
@@ -1503,7 +1503,7 @@ ChoosePart.Position = UDim2.new(0, 100, 0, 55)
 ChoosePart.Size = UDim2.new(0, 75, 0, 30)
 ChoosePart.Font = Enum.Font.SourceSans
 ChoosePart.TextSize = 14
-ChoosePart.Text = "Select Part"
+ChoosePart.Text = "选择部件"
 ChoosePart.TextColor3 = Color3.new(1, 1, 1)
 ChoosePart.ZIndex = 10
 table.insert(shade2,ChoosePart)
@@ -1517,7 +1517,7 @@ CopyPath.Position = UDim2.new(0, 185, 0, 55)
 CopyPath.Size = UDim2.new(0, 75, 0, 30)
 CopyPath.Font = Enum.Font.SourceSans
 CopyPath.TextSize = 14
-CopyPath.Text = "Copy Path"
+CopyPath.Text = "复制位置"
 CopyPath.TextColor3 = Color3.new(1, 1, 1)
 CopyPath.ZIndex = 10
 table.insert(shade2,CopyPath)
@@ -1531,7 +1531,7 @@ Directions_3.Position = UDim2.new(0, 51, 0, 17)
 Directions_3.Size = UDim2.new(0, 257, 0, 32)
 Directions_3.Font = Enum.Font.SourceSans
 Directions_3.TextSize = 14
-Directions_3.Text = 'Click on a part and then click the "Select Part" button below to set it as a teleport location'
+Directions_3.Text = '单击一个部件,然后单击下面的“选择部件”按钮将其设置为传送位置'
 Directions_3.TextColor3 = Color3.new(1, 1, 1)
 Directions_3.TextWrapped = true
 Directions_3.TextYAlignment = Enum.TextYAlignment.Top
@@ -1569,7 +1569,7 @@ PopupText_5.Size = UDim2.new(1, 0, 0.95, 0)
 PopupText_5.ZIndex = 10
 PopupText_5.Font = Enum.Font.SourceSans
 PopupText_5.TextSize = 14
-PopupText_5.Text = "Teleport to Part"
+PopupText_5.Text = "传送到部件"
 PopupText_5.TextColor3 = Color3.new(1, 1, 1)
 PopupText_5.TextWrapped = true
 table.insert(text1,PopupText_5)
@@ -1991,9 +1991,9 @@ end
 function toClipboard(txt)
     if everyClipboard then
         everyClipboard(tostring(txt))
-        notify("Clipboard", "Copied to clipboard")
+        notify("剪切板", "已复制到剪切板")
     else
-        notify("Clipboard", "Your exploit doesn't have the ability to use the clipboard")
+        notify("剪切板", "无法使用剪切板:<")
     end
 end
 
@@ -4031,7 +4031,7 @@ ChoosePart.MouseButton1Click:Connect(function()
 				end
 			end
 			if not FoundDupe then
-				notify('Modified Waypoints',"Created waypoint: "..selected.Adornee.Name..tpNameExt)
+				notify('修改后的传送点',"已创建传送点: "..selected.Adornee.Name..tpNameExt)
 				pWayPoints[#pWayPoints + 1] = {NAME = selected.Adornee.Name..tpNameExt, COORD = {selected.Adornee}}
 			else
 				if isNumber(tpNameExt) then
@@ -4045,7 +4045,7 @@ ChoosePart.MouseButton1Click:Connect(function()
 		handleWpNames()
 		refreshwaypoints()
 	else
-		notify('Part Selection','Select a part first')
+		notify('部件选择','首先选择1个部件')
 	end
 end)
 
@@ -4054,14 +4054,14 @@ customAlias = {}
 Delete_3.MouseButton1Click:Connect(function()
 	customAlias = {}
 	aliases = {}
-	notify('Aliases Modified','Removed all aliases')
+	notify('修改别名','清除了所有的别名')
 	updatesaves()
 	refreshaliases()
 end)
 
 PrefixBox:GetPropertyChangedSignal("Text"):Connect(function()
 	prefix = PrefixBox.Text
-	Cmdbar.PlaceholderText = "命令栏 ("..prefix..")"
+	Cmdbar.PlaceholderText = "输入框 ("..prefix..")"
 	updatesaves()
 end)
 
@@ -5434,7 +5434,7 @@ Players.LocalPlayer.Chatted:Connect(function()
 	end
 end)
 
-Cmdbar.PlaceholderText = "命令栏 ("..prefix..")"
+Cmdbar.PlaceholderText = "输入框 ("..prefix..")"
 Cmdbar:GetPropertyChangedSignal("Text"):Connect(function()
 	if Cmdbar:IsFocused() then
 		IndexContents(Cmdbar.Text,true,true)
@@ -6186,7 +6186,7 @@ function LoadPlugin(val,startup)
 
 	if plugin ~= nil then
 		if not startup then
-			notify('Loaded Plugin',"Name: "..plugin["PluginName"].."\n".."Description: "..plugin["PluginDescription"])
+			notify('加载插件',"名称: "..plugin["PluginName"].."\n".."描述: "..plugin["PluginDescription"])
 		end
 		addcmdtext('',val)
 		addcmdtext(string.upper('--'..plugin["PluginName"]),val,plugin["PluginDescription"])
@@ -6255,7 +6255,7 @@ Plugins.MouseButton1Click:Connect(function()
 		wait(0.5)
 		SettingsHolder.Visible = false
 	else
-		notify('Incompatible Exploit','Your exploit is unable to use plugins (missing read/writefile)')
+		notify('错误','无法使用插件(缺少文件)')
 	end
 end)
 
@@ -6280,7 +6280,7 @@ addcmd('addalias',{},function(args, speaker)
 		if v.NAME:lower()==cmd or FindInTable(v.ALIAS,cmd) then
 			customAlias[alias] = v
 			aliases[#aliases + 1] = {CMD = cmd, ALIAS = alias}
-			notify('Aliases Modified',"Added "..alias.." as an alias to "..cmd)
+			notify('修改别名',"已为 "..cmd.." 添加别名 "..alias)
 			updatesaves()
 			refreshaliases()
 			break
@@ -6299,7 +6299,7 @@ addcmd('removealias',{},function(args, speaker)
 				table.remove(aliases, i)
 			end
 		end
-		notify('Aliases Modified',"Removed the alias "..alias.." from "..cmd)
+		notify('修改别名',"删除了 "..cmd.." 的别名 "..alias)
 		updatesaves()
 		refreshaliases()
 	end
@@ -6308,7 +6308,7 @@ end)
 addcmd('clraliases',{},function(args, speaker)
 	customAlias = {}
 	aliases = {}
-	notify('Aliases Modified','Removed all aliases')
+	notify('修改别名','清除了所有别名')
 	updatesaves()
 	refreshaliases()
 end)
@@ -7278,7 +7278,7 @@ end)
 addcmd('setwaypoint',{'swp','setwp','spos','saveposition','savepos'},function(args, speaker)
 	local WPName = tostring(getstring(1))
 	if getRoot(speaker.Character) then
-		notify('Modified Waypoints',"Created waypoint: "..getstring(1))
+		notify('修改后的传送点',"已创建传送点: "..getstring(1))
 		local torso = getRoot(speaker.Character)
 		WayPoints[#WayPoints + 1] = {NAME = WPName, COORD = {math.floor(torso.Position.X), math.floor(torso.Position.Y), math.floor(torso.Position.Z)}, GAME = PlaceId}
 		if AllWaypoints ~= nil then
@@ -7292,7 +7292,7 @@ end)
 addcmd('waypointpos',{'wpp','setwaypointposition','setpos','setwaypoint','setwaypointpos'},function(args, speaker)
 	local WPName = tostring(getstring(1))
 	if getRoot(speaker.Character) then
-		notify('Modified Waypoints',"Created waypoint: "..getstring(1))
+		notify('修改后的传送点',"已创建传送点: "..getstring(1))
 		WayPoints[#WayPoints + 1] = {NAME = WPName, COORD = {args[2], args[3], args[4]}, GAME = PlaceId}
 		if AllWaypoints ~= nil then
 			AllWaypoints[#AllWaypoints + 1] = {NAME = WPName, COORD = {args[2], args[3], args[4]}, GAME = PlaceId}
