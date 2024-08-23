@@ -4016,7 +4016,7 @@ CopyPath.MouseButton1Click:Connect(function()
 	if Path.Text ~= "" then
 		toClipboard(Path.Text)
 	else
-		notify('Copy Path','Select a part to copy its path')
+		notify('复制坐标','选择部件复制其坐标')
 	end
 end)
 
@@ -4031,7 +4031,7 @@ ChoosePart.MouseButton1Click:Connect(function()
 				end
 			end
 			if not FoundDupe then
-				notify('修改后的传送点',"已创建传送点: "..selected.Adornee.Name..tpNameExt)
+				notify('修改传送点',"创建传送点: "..selected.Adornee.Name..tpNameExt)
 				pWayPoints[#pWayPoints + 1] = {NAME = selected.Adornee.Name..tpNameExt, COORD = {selected.Adornee}}
 			else
 				if isNumber(tpNameExt) then
@@ -7278,7 +7278,7 @@ end)
 addcmd('setwaypoint',{'swp','setwp','spos','saveposition','savepos'},function(args, speaker)
 	local WPName = tostring(getstring(1))
 	if getRoot(speaker.Character) then
-		notify('修改后的传送点',"已创建传送点: "..getstring(1))
+		notify('修改传送点',"创建传送点: "..getstring(1))
 		local torso = getRoot(speaker.Character)
 		WayPoints[#WayPoints + 1] = {NAME = WPName, COORD = {math.floor(torso.Position.X), math.floor(torso.Position.Y), math.floor(torso.Position.Z)}, GAME = PlaceId}
 		if AllWaypoints ~= nil then
@@ -7292,7 +7292,7 @@ end)
 addcmd('waypointpos',{'wpp','setwaypointposition','setpos','setwaypoint','setwaypointpos'},function(args, speaker)
 	local WPName = tostring(getstring(1))
 	if getRoot(speaker.Character) then
-		notify('修改后的传送点',"已创建传送点: "..getstring(1))
+		notify('修改传送点',"创建传送点: "..getstring(1))
 		WayPoints[#WayPoints + 1] = {NAME = WPName, COORD = {args[2], args[3], args[4]}, GAME = PlaceId}
 		if AllWaypoints ~= nil then
 			AllWaypoints[#AllWaypoints + 1] = {NAME = WPName, COORD = {args[2], args[3], args[4]}, GAME = PlaceId}
@@ -7432,7 +7432,7 @@ end)
 addcmd('deletewaypoint',{'dwp','dpos','deleteposition','deletepos'},function(args, speaker)
 	for i,v in pairs(WayPoints) do
 		if v.NAME:lower() == tostring(getstring(1)):lower() then
-			notify('Modified Waypoints',"Deleted waypoint: " .. v.NAME)
+			notify('修改传送点',"已删除传送点: " .. v.NAME)
 			table.remove(WayPoints, i)
 		end
 	end
