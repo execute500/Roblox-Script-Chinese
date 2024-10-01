@@ -1,13 +1,13 @@
 local HttpService = game:GetService("HttpService")
 local baseURL = "https://raw.githubusercontent.com/execute500/Roblox-Script-Chinese/refs/heads/main/Doors/MSPaint"
-local key = game:HttpGet(https://raw.githubusercontent.com/execute500/execute500/refs/heads/main/script-key.txt)
+
 export type gameMapping = {
     exclusions: table?,
     main: string
 }
 
 if not getgenv().ExecutorSupport then
-    loadstring(game:HttpGet(baseURL .. "/executorTest.lua" .. key))()
+    loadstring(game:HttpGet(baseURL .. "/executorTest.lua"))()
 end
 
 if not getgenv().BloxstrapRPC then
@@ -53,7 +53,7 @@ if not getgenv().BloxstrapRPC then
     getgenv().BloxstrapRPC = BloxstrapRPC
 end
 
-local mapping: gameMapping = HttpService:JSONDecode(game:HttpGet(baseURL .. "/mappings/" .. game.GameId .. ".json" .. key))
+local mapping: gameMapping = HttpService:JSONDecode(game:HttpGet(baseURL .. "/mappings/" .. game.GameId .. ".json"))
 local scriptPath = mapping.main
 
 if mapping.exclusions and mapping.exclusions[tostring(game.PlaceId)] then
