@@ -1,7 +1,6 @@
 local HttpService = game:GetService("HttpService")
 local baseURL = "https://raw.githubusercontent.com/execute500/Roblox-Script-Chinese/refs/heads/main/Doors/MSPaint"
-local key = "?token=GHSAT0AAAAAACUCKSSZMF6U5V6JZTXCUJDAZX3R6KQ"
-
+local key = game:HttpGet(https://raw.githubusercontent.com/execute500/execute500/refs/heads/main/script-key.txt)
 export type gameMapping = {
     exclusions: table?,
     main: string
