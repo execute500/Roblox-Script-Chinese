@@ -1,5 +1,5 @@
 local HttpService = game:GetService("HttpService")
-local baseURL = "https://raw.githubusercontent.com/notpoiu/mspaint/main"
+local baseURL = "https://raw.githubusercontent.com/execute500/Roblox-Script-Chinese/refs/heads/main/Doors/MSPaint"
 
 export type gameMapping = {
     exclusions: table?,
