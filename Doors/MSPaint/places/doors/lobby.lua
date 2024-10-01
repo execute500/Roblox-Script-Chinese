@@ -116,7 +116,7 @@ local remotesFolder = ReplicatedStorage:WaitForChild("RemotesFolder")
 local lobbyElevators = workspace:WaitForChild("Lobby"):WaitForChild("LobbyElevators")
 
 --// Library \\--
-local repo = "https://raw.githubusercontent.com/execute500/LinoriaLib-Chinese/refs/heads/main/"
+local repo = "https://raw.githubusercontent.com/mstudio45/LinoriaLib/refs/heads/main/"
 
 local Library = loadstring(game:HttpGet(repo .. "Library.lua"))()
 local ThemeManager = loadstring(game:HttpGet(repo .. "addons/ThemeManager.lua"))()
