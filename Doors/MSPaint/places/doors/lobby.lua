@@ -136,8 +136,8 @@ local Window = Library:CreateWindow({
 })
 
 local Tabs = {
-	Main = Window:AddTab("主要"),
-	["UI Settings"] = Window:AddTab("UI设置"),
+	Main = Window:AddTab("Main"),
+	["UI Settings"] = Window:AddTab("UI Settings"),
 }
 
 
